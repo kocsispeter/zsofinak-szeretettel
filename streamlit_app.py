@@ -3,8 +3,50 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-# Set page config
+# Set page config (This must be the first Streamlit command)
 st.set_page_config(page_title="Miért Szeretem a Páromat", layout="wide")
+
+# Custom CSS for styling
+st.markdown("""
+<style>
+    .reportview-container .main .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .sidebar .sidebar-content {
+        background-image: linear-gradient(#f6d8ac, #f1beb0);
+    }
+    .Widget>label {
+        color: #462211;
+        font-weight: bold;
+    }
+    .stButton>button {
+        color: #4F8BF9;
+        border-radius: 50%;
+        height: 3em;
+        width: 3em;
+    }
+    .stTextInput>div>div>input {
+        color: #4F8BF9;
+    }
+    .powered-by {
+        text-align: center;
+        background: linear-gradient(45deg, #f3ec78, #af4261);
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        margin-top: 20px;
+    }
+    .powered-by p {
+        margin: 0;
+        font-size: 12px;
+    }
+    .company-name {
+        font-weight: bold;
+        font-size: 16px;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Data
 data = {
@@ -23,7 +65,7 @@ data = {
 df = pd.DataFrame(data)
 
 # Title
-st.title("Miért Szeretem a Páromat")
+st.title("❤️ Miért Szeretem a Páromat ❤️")
 
 # Sidebar for chart selection
 chart_type = st.sidebar.selectbox(
@@ -81,6 +123,14 @@ st.write(f"**Érték:** {selected_data['value']}")
 
 # Add a metric
 st.sidebar.metric(label="Átlagos Érték", value=f"{df['value'].mean():.2f}")
+
+# Add the fancy "Powered by" section
+st.sidebar.markdown("""
+<div class="powered-by">
+    <p>Powered by</p>
+    <p class="company-name">Kocsis Péter</p>
+</div>
+""", unsafe_allow_html=True)
 
 # Footer
 st.sidebar.markdown("---")
