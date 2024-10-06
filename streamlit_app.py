@@ -59,7 +59,7 @@ data = {
         "Biztonság", "Nevetés", "Motiváció", "Megosztás", "Értékesség", "Új élmények",
         "Bizalom", "Stimuláció", "Fizikai vonzalom", "Harmónia"
     ],
-    "value": [90, 85, 95, 80, 88, 82, 98, 87, 84, 93]
+    "value": [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
 }
 
 df = pd.DataFrame(data)
