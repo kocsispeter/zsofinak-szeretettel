@@ -4,7 +4,11 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # Set page config (This must be the first Streamlit command)
-st.set_page_config(page_title="Miért Szeretem a Páromat", layout="wide")
+st.set_page_config(
+    page_title="Miért Szeretem a Páromat",
+    page_icon="❤️",
+    layout="wide"
+)
 
 # Custom CSS for styling
 st.markdown("""
@@ -132,6 +136,6 @@ st.sidebar.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Footer
-st.sidebar.markdown("---")
-st.sidebar.markdown("Készült Streamlit-tel ❤️")
+# # Footer
+# st.sidebar.markdown("---")
+# st.sidebar.markdown("Készült Streamlit-tel ❤️")
